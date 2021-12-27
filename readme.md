@@ -15,3 +15,5 @@ The project Project bootstraped using
 $ npm install
 $ npm start
 ```
+
+![preview](assets/images/preview.png)
