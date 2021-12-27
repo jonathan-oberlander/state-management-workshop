@@ -1,0 +1,59 @@
+{
+	"name": "react-ink",
+	"version": "0.0.0",
+	"license": "MIT",
+	"bin": "dist/cli.js",
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "npm run build && dist/cli.js",
+		"pretest": "npm run build",
+		"test": "xo && ava"
+	},
+	"files": [
+		"dist/cli.js"
+	],
+	"dependencies": {
+		"fast-deep-equal": "^3.1.3",
+		"figlet": "^1.5.2",
+		"ink": "^3.2.0",
+		"meow": "^10.1.2",
+		"react": "^17.0.2",
+		"zustand": "^3.6.7"
+	},
+	"ava": {
+		"typescript": {
+			"extensions": [
+				"tsx"
+			],
+			"rewritePaths": {
+				"source/": "dist/"
+			}
+		}
+	},
+	"xo": {
+		"extends": "xo-react",
+		"prettier": true,
+		"rules": {
+			"react/prop-types": "off"
+		}
+	},
+	"devDependencies": {
+		"@ava/typescript": "^3.0.1",
+		"@sindresorhus/tsconfig": "^2.0.0",
+		"@types/figlet": "^1.5.4",
+		"@types/react": "^17.0.38",
+		"ava": "^3.15.0",
+		"chalk": "^5.0.0",
+		"eslint-config-xo-react": "^0.25.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"ink-testing-library": "^2.1.0",
+		"prettier": "^2.5.1",
+		"ts-node": "^10.4.0",
+		"typescript": "^4.5.4",
+		"xo": "^0.47.0"
+	}
+}
