@@ -24,7 +24,7 @@ type Store = {
 // Actions Reducer ------------------------------------------------
 type Action = { type: 'toggle' } | { type: 'increment' }
 
-const reducer = (state: State, action: Action) => {
+const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'increment':
       return {
@@ -61,12 +61,12 @@ export const useContextCounter = () => useAppState().state.counter
 
 export const useMemoContextToggle = () => {
   const toggle = useAppState().state.toggle
-  useMemo(() => toggle, [toggle])
-  return toggle
+  const memoToggle = useMemo(() => toggle, [toggle])
+  return memoToggle
 }
 
 export const useMemoContextCounter = () => {
   const counter = useAppState().state.counter
-  useMemo(() => counter, [counter])
-  return counter
+  const memoCounter = useMemo(() => counter, [counter])
+  return memoCounter
 }
